@@ -1,19 +1,17 @@
 const typeStats = (pokeArray, type) => {
+  let obj = {};
   let typeCount = 0;
   let weaknessCount = 0;
-  pokeArray.map((p) => {
-    if (p.type.includes(type)) {
+  pokeArray.forEach((item) => {
+    if (item.type.includes(type)) {
       typeCount++;
     }
-    if (p.weaknesses.includes(type)) {
+    if (item.weaknesses.includes(type)) {
       weaknessCount++;
     }
   });
-  return {
-    typeName: type,
-    typeCount: typeCount,
-    weaknessCount: weaknessCount,
-  };
+  obj = { typeCount: typeCount, typeName: type, weaknessCount: weaknessCount };
+  return obj;
 };
 
 module.exports = typeStats;

@@ -1,6 +1,14 @@
 const id = (pokeData, id) => {
-  const pokemon = pokeData.find((p) => p.id === id);
-  if (!pokemon) return null;
-  return pokemon;
+  let obj = {};
+  pokeData.forEach((item) => {
+    if (item.id === id) {
+      // console.log(item);
+      obj = item;
+    }
+  });
+  if (JSON.stringify(obj) === JSON.stringify({})) {
+    obj = null;
+  }
+  return obj;
 };
 module.exports = id;

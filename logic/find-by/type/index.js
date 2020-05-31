@@ -1,7 +1,15 @@
 const type = (pokeArray, type) => {
-  let results = pokeArray.filter((p) => p.type.includes(type));
-  results = results.map((p) => ({ name: p.name, num: p.num }));
-  return results;
+  const arr = [];
+  pokeArray.forEach((element) => {
+    if (element["type"][0] === type) {
+      arr.push({ name: element.name, num: element.num });
+    }
+  });
+  if (arr.length === 0) {
+    return null;
+  }
+
+  return arr;
 };
 
 module.exports = type;
