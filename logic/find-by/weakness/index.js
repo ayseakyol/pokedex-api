@@ -1,3 +1,4 @@
+const isEqual = require("lodash").isEqual;
 const weakness = (pokeArray, type) => {
   const arr = [];
   pokeArray.forEach((element) => {
